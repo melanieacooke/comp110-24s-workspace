@@ -6,7 +6,14 @@ MAX_VAL: int = 10 ** 5
 
 def random_descending_list(n: int) -> list[int]:
     """Generate a list of random descending integers."""
+    import random
+    from random import randint
     new_list: list[int] = []
+    new_list.append(random.randint(0,10000000))
+    i: int = 1
+    while i < n:
+        new_list.append(new_list[-1] - random.randint(1, 100))
+        i+= 1
     return new_list
 
 def evaluate_runtime(fn_name, start_size: int, end_size: int) -> np.array:
